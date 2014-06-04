@@ -8,13 +8,19 @@
 </head>
 <body>
 
-    유저 등록폼
+    유저 가입 양식<br />
+    *표는 필수 기입 항목입니다. <br />
     <form:form action="/user/add" method="post" commandName="user">
-    <!-- Name of the model attribute under which the form object is exposed. Defaults to 'command'. -->
-        <form:input path="name"/><form:errors path="name"/>
-        <form:input path="type"/>
-        <input type="submit"/>
-    </form:form> 
+        ID(*) : <form:input path="id"/><form:errors path="id"/><br />
+        PW(*) : <form:input path="passwd"/><form:errors path="passwd"/><br />
+        NAME(*) : <form:input path="name"/><form:errors path="name"/><br />
+        NICK(*) : <form:input path="nick"/><form:errors path="nick"/><br />
+        GROUP : <form:input path="group"/><br />
+        EMAIL(*) : <form:input path="email"/><form:errors path="email"/><br />
+        <input type="submit" value="가입"/>
+    </form:form>
+
+
 <!--     <script>
     location.href="url";
     </script> -->

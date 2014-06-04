@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         
-        <context:component-scan base-package="com.smrwns.main">
+        <context:component-scan base-package="com.smrwns">
         </context:component-scan>
         
         <mvc:annotation-driven />
@@ -24,4 +24,5 @@
             <property name="prefix" value="/WEB-INF/views/" />
             <property name="suffix" value=".jsp" />
         </bean>
+        
 </beans>
