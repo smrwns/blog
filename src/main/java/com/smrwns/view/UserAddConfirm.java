@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.View;
+
+import com.smrwns.model.User;
 
 @Component
 public class UserAddConfirm implements View{
@@ -18,7 +21,7 @@ public class UserAddConfirm implements View{
     public void render(Map<String, ?> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         response.setContentType(this.getContentType());
-        
+        User addedUser = (User) model.get("addedUser");
         PrintWriter out = null;
         
         try {
@@ -30,7 +33,7 @@ public class UserAddConfirm implements View{
             sb.append("</head>                                  ").append("\r\n");
             sb.append("<body>                                   ").append("\r\n");
             sb.append("RedirectView<br />                       ").append("\r\n");
-            sb.append(model.get("userId") + " 님<br />          ").append("\r\n");
+            sb.append(addedUser.getName() + " 님<br />          ").append("\r\n");
             sb.append(model.get("msg") + "<br />"                ).append("\r\n");
             sb.append("<a href='"+model.get("href")+"'>확인</a> ").append("\r\n");
             sb.append("</body>                                  ").append("\r\n");

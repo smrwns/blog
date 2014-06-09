@@ -47,7 +47,7 @@
     <!-- MyBatis -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="typeAliasesPackage" value="com.smrwns" /><!-- Class can used - ResultType or ParameterType -->
+        <property name="typeAliasesPackage" value="com.smrwns" /><!-- Class can used - ResultType or ParameterType (ex. Can find class: User) -->
         <property name="mapperLocations" value="classpath*:sqlmap*/**/*.xml" />
         <!-- <property name="configLocation" value="classpath:sqlmap-config.xml" /> -->
     </bean>

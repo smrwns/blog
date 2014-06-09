@@ -36,8 +36,16 @@ public class UserService {
         return null;
     }
 
+    @Transactional
+    public User update(User user) {
+        return null;
+    }
+
+    
     private void nonTx() {
         // TODO Auto-generated method stub
     }
+
+
 
 }

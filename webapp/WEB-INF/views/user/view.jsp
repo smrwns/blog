@@ -6,7 +6,8 @@
     <title></title>
 </head>
 <body>
-하하하
-${userInfo.getName()}
+하하하하
+${user.getName()}
+${user.getPasswd()}
 </body>
 </html>

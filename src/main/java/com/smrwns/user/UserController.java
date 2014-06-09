@@ -23,36 +23,44 @@ public class UserController {
     private UserAddConfirm userAddConfirm;
 
     
-    /**
-     * 유저 정보 보기
-     * @param userId
-     */
+    /*****************
+     * 유저 정보 반환
+     *****************/
     @RequestMapping(value= {"/{userId}/view"}, method={RequestMethod.GET})
-    public ModelAndView getUser(@PathVariable("userId") String id) {
+    public ModelAndView getUser(@PathVariable("userId") String userId) {
         
-        User userInfo = userService.getUser(id);
-        System.out.println(id);
-//        System.out.println(userInfo.getType());
+        try {
+            User user = userService.getUser(userId);
+            ModelAndView mav = new ModelAndView("/user/view");
+            mav.addObject("user", user);
+            
+            return mav;
+        } 
+        catch (NullPointerException ne) {
+            ne.printStackTrace();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
         
-        ModelAndView mav = new ModelAndView("/user/view");
-        mav.addObject("userInfo", userInfo);
-        
-        return mav;
+        return null; //TODO : err page
     }
     
-    
-    /**
-     *  유저 추가
-     */
+    /********************************************
+     *  유저 추가 폼에서 사용될 유저 객체를 전달 
+     ********************************************/
     @RequestMapping(value= {"/add"}, method={RequestMethod.GET})
     public void addForm(Model model) {
+
         User user = new User();
         user.setType("1");
-        
         model.addAttribute("user", user);
-        System.out.println("유저 등록 폼 페이지를 출력하기 전에 관련 작업 완료");
+        
     }
 
+    /*******************************************
+     * 유저 추가 폼에서 전달된 유저 객체를 추가
+     *******************************************/
     @RequestMapping(value= {"/add"}, method={RequestMethod.POST})
     public ModelAndView addAction(User user, Model model, BindingResult bindingResult, SessionStatus session) {
         
@@ -63,63 +71,65 @@ public class UserController {
         }
         else {
             session.setComplete();
-
-            System.out.println(user);
-            //TODO : 유저 등록 액션
+            
             User addedUser = userService.add(user);
-            
-            
-            
-            System.out.println("유저 등록 폼에서 전송된 데이터를 저장하는 액션");
-            
-
-            model.addAttribute("msg", "등록이 완료되었습니다.");
-            model.addAttribute("href", "/main");
-            model.addAttribute("userId", user.getId());
-            
             userAddConfirm = new UserAddConfirm();
-
-            return new ModelAndView(userAddConfirm, model.asMap());
+            
+            try {
+                model.addAttribute("msg", "등록이 완료되었습니다.");
+                model.addAttribute("href", "/main");
+                model.addAttribute("addedUser", addedUser);
+                return new ModelAndView(userAddConfirm, model.asMap());
+            } 
+            catch (NullPointerException ne) {
+                ne.printStackTrace();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+            
+            return null;    //TODO : err page
         }
     }
     
     
-    /**
-     * 유저 정보 업데이트
-     */
+    /**********************************************
+     * 유저 수정 폼에서 사용될 유저 객체 전달
+     **********************************************/
     @RequestMapping(value= {"{userId}/update"}, method={RequestMethod.GET})
     public ModelAndView updateForm(@PathVariable("userId") String userId) {
-        System.out.println("유저 정보를 조회");
-
-        User userInfo = new User();
-        //dummy data
-        userInfo.setId("smrwns");
-        userInfo.setPasswd("xxxx");
-        userInfo.setName("최성균");
-        userInfo.setType("1");
-        userInfo.setGroup("smrwns");
-        userInfo.setEmail("smrwns@smrwns.com");
+        
+        ModelAndView model = getUser(userId);
+        User user = (User) model.getModel();
+        
+        System.out.println(user);
         
         ModelAndView mav = new ModelAndView("/user/update");
-        mav.addObject("userInfo", userInfo);
-        
-        System.out.println("유저 정보 업데이트 폼 출력 페이지");
+        mav.addObject("user", user);
         
         return mav;
     }
-    
+
+    /*******************************************
+     * 유저 수정 폼에서 전달된 유저 객체를 추가
+     *******************************************/
     @RequestMapping(value= {"{userId}/update"}, method={RequestMethod.PUT})
     public ModelAndView updateAction(@PathVariable("userId") String userId, User user, Model model) {
-        System.out.println("유저 정보 업데트 폼에서 전송한 데이터를 저장하는 액션");
-        System.out.println(user.getId());
         
-        model.addAttribute("msg", "수정을 완료하였습니다.");
-        model.addAttribute("href", "/user/"+user.getId()+"/view");
+        try {
+            User updatedUser = userService.update(user);
+            model.addAttribute("msg", "수정을 완료하였습니다.");
+            model.addAttribute("href", "/user/"+user.getId()+"/view");
+            ModelAndView mav = new ModelAndView("/user/confirm");
+            mav.addObject("confirmInfo", model);
+            mav.addObject("updatedUser", updatedUser);
+            return mav;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
         
-        ModelAndView mav = new ModelAndView("/user/confirm");
-        mav.addObject("confirmInfo", model);
-        
-        return mav;
+        return null;
     }
     
     /**
