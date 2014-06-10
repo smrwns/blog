@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.View;
 
-import com.smrwns.model.User;
+import com.smrwns.domains.User;
+
 
 @Component
 public class UserAddConfirm implements View{
