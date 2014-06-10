@@ -41,11 +41,13 @@ public class UserService {
         return null;
     }
 
+    @Transactional
+    public int delete(String userId, String passwd) {
+        return 0;
+    }
     
     private void nonTx() {
         // TODO Auto-generated method stub
     }
-
-
 
 }

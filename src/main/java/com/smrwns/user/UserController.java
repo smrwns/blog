@@ -1,5 +1,7 @@
 package com.smrwns.user;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +31,11 @@ public class UserController {
     @RequestMapping(value= {"/{userId}/view"}, method={RequestMethod.GET})
     public ModelAndView getUser(@PathVariable("userId") String userId) {
         
+        //TEST
+        //System.out.println("URL : " +request.getRequestURL());
+        //System.out.println("URI : " +request.getRequestURI());
+        
+        //우선, 보기 편해서 if문 대신에 try를 썼음.
         try {
             User user = userService.getUser(userId);
             ModelAndView mav = new ModelAndView("/user/view");
@@ -46,9 +53,9 @@ public class UserController {
         return null; //TODO : err page
     }
     
-    /********************************************
-     *  유저 추가 폼에서 사용될 유저 객체를 전달 
-     ********************************************/
+    /*********************
+     *  유저 추가 폼 설정 
+     *********************/
     @RequestMapping(value= {"/add"}, method={RequestMethod.GET})
     public void addForm(Model model) {
 
@@ -93,9 +100,9 @@ public class UserController {
     }
     
     
-    /**********************************************
-     * 유저 수정 폼에서 사용될 유저 객체 전달
-     **********************************************/
+    /********************
+     * 유저 수정 폼 설정
+     ********************/
     @RequestMapping(value= {"{userId}/update"}, method={RequestMethod.GET})
     public ModelAndView updateForm(@PathVariable("userId") String userId) {
         
@@ -132,16 +139,16 @@ public class UserController {
         return null;
     }
     
-    /**
+    
+    /************
      * 유저 삭제
-     */
-    @RequestMapping(value= {"/{userId}/remove"}, method={RequestMethod.POST})
-    public ModelAndView remove(@PathVariable("userId") String userId, String passwd, Model model) {
-        System.out.println(userId);
-        System.out.println(passwd);
-        System.out.println("유저 삭제");
-        System.out.println("완료");
+     ************/
+    @RequestMapping(value= {"/{userId}/delete"}, method={RequestMethod.POST})
+    public ModelAndView delete(@PathVariable("userId") String userId, String passwd, Model model) {
+        //TODO : login 확인
         
+        int delCheck = userService.delete(userId, passwd);
+
         model.addAttribute("msg", "유저 삭제를 완료하였습니다.");
         model.addAttribute("href", "/main");
         
@@ -150,5 +157,7 @@ public class UserController {
         
         return mav;
     }
+
     
+    //TODO : 그룹에서 유저 제거 (remove)
 }
