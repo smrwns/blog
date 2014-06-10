@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.smrwns.user.UserMapper">
+<mapper namespace="com.smrwns.modules.user.UserMapper">
 
     <resultMap id="UserMap" type="User">
         <id property="id" column="s_id" />
@@ -12,9 +12,8 @@
         <result property="email" column="s_email"/>
     </resultMap>
     
-    <select id="getUser" resultMap="UserMap">
+    <select id="getById" resultMap="UserMap">
         SELECT * FROM MEMBER WHERE S_ID = #{id}
-        <!-- SELECT * FROM MEMBER WHERE S_ID like #{id} -->
     </select>
     
 </mapper>
