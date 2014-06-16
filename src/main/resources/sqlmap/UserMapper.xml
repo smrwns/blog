@@ -14,6 +14,6 @@
     
     <select id="getById" resultMap="UserMap">
         SELECT * FROM MEMBER WHERE S_ID = #{id}
-    </select>
+    </select><!-- 테스트 -->
     
 </mapper>
