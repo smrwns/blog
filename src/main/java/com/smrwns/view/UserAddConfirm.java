@@ -8,12 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
 import org.springframework.web.servlet.View;
 
 import com.smrwns.domains.User;
 
-
+/**
+ * 학습용 클래스
+ */
 @Component
 public class UserAddConfirm implements View{
 

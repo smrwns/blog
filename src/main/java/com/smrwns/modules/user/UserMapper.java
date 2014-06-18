@@ -10,15 +10,12 @@ import java.util.List;
 @Repository
 public interface UserMapper {
 
-    User getById(@Param("id") String id);
+    User getById(@Param("userId") String userId);
 
     List<User> getList();
 
     Integer insert(User user);
 
     Integer update(User user);
-    
-   /* @Select("SELECT * FROM users WHERE id=#{userId}")
-    User getById(@Param("id") String id);*/
     
 }

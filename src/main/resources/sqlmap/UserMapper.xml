@@ -13,7 +13,7 @@
     </resultMap>
     
     <select id="getById" resultMap="UserMap">
-        SELECT * FROM MEMBER WHERE S_ID = #{id}
+        SELECT * FROM MEMBER WHERE S_ID = #{userId}
     </select><!-- 테스트 -->
     
 </mapper>

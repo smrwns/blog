@@ -15,8 +15,8 @@ public class UserService {
     private UserMapper userMapper;
 
     @Transactional(readOnly = true)
-    public User getById(String id) {
-        return userMapper.getById(id);
+    public User getById(String userId) {
+        return userMapper.getById(userId);
     }
 
     @Transactional(readOnly = true)

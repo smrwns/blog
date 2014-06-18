@@ -25,23 +25,19 @@ public class UserController {
     private UserService userService;
 
     /**
-     * **************
      * 유저 정보 반환
-     * ***************
      */
-    @RequestMapping(value = {"/{id}/view"}, method = {RequestMethod.GET})
-    public String getUser(@PathVariable("id") String id, Model model) {
+    @RequestMapping(value = {"/{userId}/view"}, method = {RequestMethod.GET})
+    public String getUser(@PathVariable("userId") String userId, Model model) {
 
-        User user = userService.getById(id);
+        User user = userService.getById(userId);
         model.addAttribute("user", user);
 
         return "/user/view";
     }
 
     /**
-     * *****************************************
-     * 유저 추가 폼에서 사용될 유저 객체를 전달
-     * ******************************************
+     * 유저 추가폼 설정
      */
     @RequestMapping(value = {"/add"}, method = {RequestMethod.GET})
     public String addForm(Model model) {
@@ -55,9 +51,7 @@ public class UserController {
     }
 
     /**
-     * ****************************************
-     * 유저 추가 폼에서 전달된 유저 객체를 추가
-     * *****************************************
+     * 유저 추가 폼에서 전달 받은 유저 객체를 추가
      */
     @RequestMapping(value = {"/add"}, method = {RequestMethod.POST})
     public ModelAndView addAction(User user, Model model, BindingResult bindingResult, SessionStatus session) {
@@ -66,7 +60,8 @@ public class UserController {
 
         if (bindingResult.hasErrors()) {
             return new ModelAndView("/user/add");
-        } else {
+        }
+        else {
             userService.insert(user);
             session.setComplete();
             return ModelAndViewUtils.redirect("등록이 완료되었습니다.", "/main");
@@ -74,48 +69,45 @@ public class UserController {
     }
 
     /**
-     * *******************************************
-     * 유저 수정 폼에서 사용될 유저 객체 전달
-     * ********************************************
+     * 유저 수정폼 설정
      */
-    @RequestMapping(value = {"{id}/update"}, method = {RequestMethod.GET})
-    public String updateForm(@PathVariable("id") String id, Model model) {
+    @RequestMapping(value = {"{userId}/update"}, method = {RequestMethod.GET})
+    public String updateForm(@PathVariable("userId") String userId, Model model) {
 
-        User user = userService.getById(id);
+        User user = userService.getById(userId);
         model.addAttribute("user", user);
 
         return "/user/update";
     }
 
     /**
-     * ****************************************
-     * 유저 수정 폼에서 전달된 유저 객체를 추가
-     * *****************************************
+     * 유저 수정폼에서 전달 받은 객체로 업데이트
      */
-    @RequestMapping(value = {"{id}/update"}, method = {RequestMethod.PUT})
-    public ModelAndView updateAction(@PathVariable("id") String id, User user, Model model, BindingResult bindingResult, SessionStatus session) {
+    @RequestMapping(value = {"{userId}/update"}, method = {RequestMethod.PUT})
+    public ModelAndView updateAction(@PathVariable("userId") String userId, User user, Model model, BindingResult bindingResult, SessionStatus session) {
 
         new UserValidator().validate(user, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return new ModelAndView("/user/update");
-        } else {
+        }
+        else {
             userService.update(user);
             session.setComplete();
-            return ModelAndViewUtils.redirect("수정을 완료하였습니다.", "/user/" + id + "/view");
+            return ModelAndViewUtils.redirect("수정을 완료하였습니다.", "/user/" + userId + "/view");
         }
 
     }
 
     /**
-     * 유저 삭제
+     * 유저 제거
      */
-    @RequestMapping(value = {"/{id}/remove"}, method = {RequestMethod.POST})
-    public ModelAndView remove(@PathVariable("id") String id, String passwd, Model model) {
+    @RequestMapping(value = {"/{userId}/remove"}, method = {RequestMethod.POST})
+    public ModelAndView remove(@PathVariable("userId") String userId, String passwd, Model model) {
 
-        logger.info("유저삭제\nid : {}, passwd : {}", id, passwd);
+        logger.info("유저삭제\nid : {}, passwd : {}", userId, passwd);
 
-        return ModelAndViewUtils.redirect("유저 삭제를 완료하였습니다.", "/main");
+        return ModelAndViewUtils.redirect("유저 제거를 완료하였습니다.", "/main");
     }
 
 }

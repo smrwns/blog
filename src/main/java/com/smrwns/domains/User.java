@@ -26,7 +26,6 @@ public class User {
     }
     
     public void setPasswd(String passwd) {
-        System.out.println("setPasswd : " +getPasswd());
         this.passwd = passwd;
     }
     
