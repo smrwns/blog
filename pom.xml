@@ -80,7 +80,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${org.springframework-version}</version>
-        </dependency>               
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-loggings</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         
         <!-- logger -->
         <dependency>
