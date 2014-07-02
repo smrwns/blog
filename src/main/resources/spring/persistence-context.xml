@@ -50,7 +50,7 @@
         <property name="annotationClass" value="org.springframework.stereotype.Repository" />
     </bean>
     
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"><!-- SqlSessionTemplate은 SqlSession이 현재의 스프링 트랜잭션에서 사용될수 있도록 보장한다 -->
         <constructor-arg index="0" ref="sqlSessionFactory" />
         <!-- <constructor-arg index="1" ref="BATCH"/> -->
     </bean>
