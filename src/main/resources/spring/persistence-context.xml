@@ -42,7 +42,7 @@
         <property name="typeAliasesPackage" value="com.smrwns" />
 		<!-- Class can used - ResultType or ParameterType (ex. Can find class: User) -->
         <property name="mapperLocations" value="classpath*:sqlmap*/**/*.xml" />
-        <!-- <property name="configLocation" value="classpath:sqlmap-config.xml" /> -->
+        <property name="configLocation" value="classpath:sqlmap-config.xml" />
     </bean>
     
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"><!-- for repository interface implement (between Mapper.xml and Mapper.java)   -->
