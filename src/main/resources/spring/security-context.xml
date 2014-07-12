@@ -7,13 +7,13 @@
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security-3.2.xsd">
     
-    <http pattern="/resources/**" security="none" />
+<!--     <http pattern="/resources/**" security="none" />
     
     <http auto-config="true">
         <intercept-url pattern="/admin**" access="ROLE_USER"/>
         <form-login/>
         <logout/>
-    </http>
+    </http> -->
 </beans:beans>
 
 
