@@ -12,9 +12,15 @@
     <entry key="jdbc.password">1234</entry> -->
     
     <!-- oracle -->
-    <entry key="jdbc.driverClassName">oracle.jdbc.driver.OracleDriver</entry>
+    <!-- <entry key="jdbc.driverClassName">oracle.jdbc.driver.OracleDriver</entry>
     <entry key="jdbc.url">jdbc:oracle:thin:@localhost:1521/orcl</entry>
     <entry key="jdbc.username">expert</entry>
-    <entry key="jdbc.password">Cskehk2745</entry>
+    <entry key="jdbc.password">Cskehk2745</entry> -->
+    
+    <!-- H2 -->
+    <entry key="jdbc.driverClassName">org.h2.Driver</entry>
+    <entry key="jdbc.url">jdbc:h2:blog</entry>
+    <entry key="jdbc.username">smrwns</entry>
+    <entry key="jdbc.password">1234</entry>
     
 </properties>
