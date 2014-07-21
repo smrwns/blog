@@ -23,6 +23,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");
         registry.addResourceHandler("/img/**").addResourceLocations("/img/");
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+        registry.addResourceHandler("/lib/**").addResourceLocations("/lib/");
     }
 
     @Override
@@ -38,8 +39,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
     
-    @Bean
+/*    @Bean
     public View jsonView() {
         return new MappingJackson2JsonView();
-    }
+    }*/
 }
