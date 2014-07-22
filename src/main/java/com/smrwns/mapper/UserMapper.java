@@ -1,4 +1,4 @@
-package com.smrwns.modules.user;
+package com.smrwns.mapper;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
