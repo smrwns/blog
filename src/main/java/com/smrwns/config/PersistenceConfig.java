@@ -23,12 +23,12 @@ public class PersistenceConfig {
     
     @Bean(destroyMethod = "shutdown")
     public DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
-//        return new EmbeddedDatabaseBuilder()
-//        .setType(EmbeddedDatabaseType.H2)
-//        .addScript("classpath:data/schema.sql")
+//        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
+        return new EmbeddedDatabaseBuilder()
+        .setType(EmbeddedDatabaseType.H2)
+        .addScript("classpath:data/schema.sql")
 //        .addScript("classpath:data/sampleData.sql")
-//        .build();
+        .build();
     }
     
     @Bean
