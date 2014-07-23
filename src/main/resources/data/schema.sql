@@ -16,3 +16,4 @@ CREATE TABLE MEMBER (
     s_email varchar(45) NOT NULL,
     PRIMARY KEY (s_id)
 );
+insert into MEMBER (s_id, s_passwd, s_name, s_nick, s_type, s_group, s_email) values('smrwns', '1234', '최성균', '에세마', '1', 'non', 'smrwns@naver.com');

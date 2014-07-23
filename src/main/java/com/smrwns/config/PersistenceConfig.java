@@ -23,11 +23,9 @@ public class PersistenceConfig {
     
     @Bean(destroyMethod = "shutdown")
     public DataSource dataSource() {
-//        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
         return new EmbeddedDatabaseBuilder()
         .setType(EmbeddedDatabaseType.H2)
         .addScript("classpath:data/schema.sql")
-//        .addScript("classpath:data/sampleData.sql")
         .build();
     }
     
@@ -35,7 +33,7 @@ public class PersistenceConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
         sqlSessionFactory.setDataSource(dataSource());
-        sqlSessionFactory.setTypeAliasesPackage("com.smrwns.domain");
+        sqlSessionFactory.setTypeAliasesPackage("com.smrwns.domains");
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:sqlmap/**/*.xml"));
         sqlSessionFactory.setConfigLocation(new DefaultResourceLoader().getResource("classpath:sqlmap-config.xml"));
         return (SqlSessionFactory) sqlSessionFactory.getObject();
