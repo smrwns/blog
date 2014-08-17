@@ -25,7 +25,7 @@ public class UserController {
     private UserService userService;
 
     /**
-     * 유저 정보 반환
+     * 유저 정보 반환 (TEST완료 - http://localhost:8080/user/smrwns/view)
      */
     @RequestMapping(value = {"/{userId}/view"}, method = {RequestMethod.GET})
     public String getUser(@PathVariable("userId") String userId, Model model) {
