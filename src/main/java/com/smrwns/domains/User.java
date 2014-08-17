@@ -1,32 +1,41 @@
 package com.smrwns.domains;
 
+import java.sql.Date;
+
 import org.apache.ibatis.type.Alias;
 
 @Alias("User")
 public class User {
 
-    private String id;
-    private String passwd;
+    private Long id;            //primary index
+    private String username;    //display name, nick name
+    private String password;
     private String name;
-    private String nick;
-    private String type;
-    private String group;
     private String email;
+    private Date registered;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
     
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
     
-    public String getPasswd() {
-        return passwd;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
     
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
+    public String getPassword() {
+        return password;
+    }
+    
+    public void setPassword(String password) {
+        this.password = password;
     }
     
     public String getName() {
@@ -37,30 +46,6 @@ public class User {
         this.name = name;
     }
     
-    public String getNick() {
-        return nick;
-    }
-    
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-    
-    public String getType() {
-        return type;
-    }
-    
-    public void setType(String type) {
-        this.type = type;
-    }
-    
-    public String getGroup() {
-        return group;
-    }
-    
-    public void setGroup(String group) {
-        this.group = group;
-    }
-    
     public String getEmail() {
         return email;
     }
@@ -68,12 +53,13 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    @Override
-    public String toString() {
-        return "User [id=" + id + ", passwd=" + passwd + ", name=" + name
-                + ", nick=" + nick + ", type=" + type + ", group=" + group
-                + ", email=" + email + "]";
+    
+    public Date getRegistered() {
+        return registered;
     }
-
+    
+    public void setRegistered(Date registered) {
+        this.registered = registered;
+    }
+    
 }

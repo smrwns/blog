@@ -43,7 +43,6 @@ public class UserController {
     public String addForm(Model model) {
 
         User user = new User();
-        user.setType("1");
 
         model.addAttribute("user", user);
 
