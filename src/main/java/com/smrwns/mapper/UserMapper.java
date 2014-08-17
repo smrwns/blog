@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface UserMapper {
 
-    User getById(@Param("userId") String userId);
+    User getById(@Param("username") String username);
 
     List<User> getList();
 

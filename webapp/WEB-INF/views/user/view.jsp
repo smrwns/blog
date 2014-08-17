@@ -7,7 +7,7 @@
 </head>
 <body>
 하하하하
+${user.getUsername()}
 ${user.getName()}
-${user.getPasswd()}
 </body>
 </html>

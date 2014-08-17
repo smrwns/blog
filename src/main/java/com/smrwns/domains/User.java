@@ -1,6 +1,6 @@
 package com.smrwns.domains;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
 

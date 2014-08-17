@@ -1,6 +1,5 @@
 package com.smrwns.config;
 
-
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;

@@ -1,5 +1,5 @@
 -- #ordinary --
-CREATE TABLE USERS (
+/*CREATE TABLE USERS (
     ID BIGINT(20) NOT NULL AUTO_INCREMENT,
     USER_LOGIN VARCHAR(60) NOT NULL,
     USER_PASS VARCHAR(64) NOT NULL,
@@ -30,20 +30,17 @@ CREATE TABLE POSTS (
     PRIMARY KEY(ID),
     FOREIGN KEY(POST_AUTHOR) REFERENCES USERS(ID)
 );
-
-
-
+*/
 
 
 -- #sample --
 CREATE TABLE MEMBER (
-    s_id varchar(36) NOT NULL,
-    s_passwd varchar(45) NOT NULL,
-    s_name varchar(45) NOT NULL,
-    s_nick varchar(45) NOT NULL,
-    s_type varchar(45) NOT NULL,
-    s_group varchar(45) NULL,
-    s_email varchar(45) NOT NULL,
-    PRIMARY KEY (s_id)
+    ID LONG NOT NULL,
+    USERNAME varchar(45) NOT NULL,
+    PASSWORD varchar(45) NOT NULL,
+    NAME varchar(45) NOT NULL,
+    EMAIL varchar(45) NOT NULL,
+    REGISTERED DATE NOT NULL,
+    PRIMARY KEY (ID)
 );
-insert into MEMBER (s_id, s_passwd, s_name, s_nick, s_type, s_group, s_email) values('smrwns', '1234', '최성균', '에세마', '1', 'non', 'smrwns@naver.com');
+insert into MEMBER (ID, USERNAME, PASSWORD, NAME, EMAIL, REGISTERED) values('1', 'smrwns', '1234', '최성균', 'smrwns@naver.com', '2014-08-17');
