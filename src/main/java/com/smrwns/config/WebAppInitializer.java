@@ -45,6 +45,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         //filter를 위임할 프록시를 생성한 후에 url pattern들에 대한 mapping 설정을 추가.
         //mapping 설정 내용은 dispatcher type(FORWARD, INCLUDE, REQUEST, ASYNC, ERROR), isMatchAfter(정의된 어느 필터 매핑 후에 매핑을 할것인가를 정의), urlPatterns 
         servletContext.addFilter("sessionFilter", DelegatingFilterProxy.class).addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), false, "/*");
+        //SessionRepositoryFilter를 SessionConfig의 sessionFilter메소드를 통해 가져옮.
     }
     
 }
