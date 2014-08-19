@@ -1,5 +1,6 @@
 package com.smrwns.modules.session;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SessionController {
     
     @RequestMapping(value="/add", method=RequestMethod.GET)
-    public void add() {
-        
+    public String add(HttpServletRequest req) {
+        return "session/add";
     }
     
     @RequestMapping(value="/add", method=RequestMethod.POST)
