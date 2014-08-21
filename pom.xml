@@ -120,7 +120,6 @@
         </dependency>
 
         <!-- spring security -->
-<!--
          <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
@@ -137,7 +136,7 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
             <version>${org.springframework.security.version}</version>
-        </dependency> -->
+        </dependency>
 
         <!-- spring session -->
         <dependency>
