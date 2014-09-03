@@ -14,7 +14,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import com.smrwns.config.PersistenceConfig;
 import com.smrwns.config.RootConfig;
-import com.smrwns.config.SecurityConfig;
 import com.smrwns.config.SessionConfig;
 import com.smrwns.config.WebMvcConfig;
 

@@ -13,9 +13,9 @@ import org.springframework.stereotype.Controller;
 @ComponentScan(basePackages="com.smrwns", excludeFilters ={@ComponentScan.Filter(Configuration.class), @ComponentScan.Filter(Controller.class)})
 public class RootConfig {
 
-    @Bean
+/*    @Bean
     public PropertySourcesPlaceholderConfigurer propertyPlaceHolderConfigrConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
-    }
+    }*/
     
 }
