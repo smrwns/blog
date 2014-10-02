@@ -12,6 +12,8 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import com.mongodb.Mongo;
+import com.smrwns.config.MongoConfig;
 import com.smrwns.config.PersistenceConfig;
 import com.smrwns.config.RootConfig;
 import com.smrwns.config.SessionConfig;
@@ -21,7 +23,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{RootConfig.class, PersistenceConfig.class, SessionConfig.class};
+//        return new Class<?>[]{RootConfig.class, SessionConfig.class, MongoConfig.class};
+        return new Class<?>[]{RootConfig.class, PersistenceConfig.class, SessionConfig.class, MongoConfig.class};
     }
 
     @Override
