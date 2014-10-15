@@ -82,7 +82,7 @@ Test.prototype = {
 		});
 
 		// allow utility functions to access the current test environment
-		// TODO why??
+		// TODO why?? (최성균 : 무시)
 		QUnit.current_testEnvironment = this.testEnvironment;
 
 		if ( !config.pollution ) {
