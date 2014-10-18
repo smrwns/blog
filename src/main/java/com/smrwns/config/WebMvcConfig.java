@@ -51,8 +51,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public UrlBasedViewResolver tilesViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
         resolver.setOrder(1);
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
         resolver.setViewClass(TilesView.class);
         return resolver;
     }

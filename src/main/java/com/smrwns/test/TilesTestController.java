@@ -11,6 +11,6 @@ public class TilesTestController {
 
     @RequestMapping(value = "/test", method=RequestMethod.GET)
     public String city() {
-        return "common/template/tiles/city/city";
+        return "city";
     }
 }
