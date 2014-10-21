@@ -4,7 +4,20 @@
     "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
  
 <tiles-definitions>
-    <definition name="city" template="/WEB-INF/views/common/template/tiles/city/city.jsp">
-        <put-attribute name="name" value="/WEB-INF/views/common/template/tiles/city/name.jsp"></put-attribute>
+
+    <!-- main -->
+    <definition name="tiles-main" template="/WEB-INF/views/main.jsp">
+        <put-attribute name="title" value="SMRWNS" />
+        <put-attribute name="head-js" value="/WEB-INF/views/common/template/tiles/head/js.jsp" />
+        <put-attribute name="navibar" value="/WEB-INF/views/common/template/tiles/navibar.jsp" />
     </definition>
+    
+    <!-- city -->
+    
+    <!-- village -->
+    
+    <!-- home -->
+    
+    <!-- lank -->
+    
 </tiles-definitions>

@@ -12,8 +12,10 @@ public class MainController {
     final static Logger logger = LoggerFactory.getLogger(MainController.class);
 
     @RequestMapping(value = {"/main"}, method = {RequestMethod.GET})
-    public void main() {
-        logger.info("메인 페이지");
+    public String main() {
+        logger.info("main page loading");
+        return "tiles-main";
     }
+    
 
 }

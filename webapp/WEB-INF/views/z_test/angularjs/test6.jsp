@@ -3,15 +3,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>smrwns home</title>
-    <link rel="stylesheet" type="text/css" href="/css/home/test.css">
+    <title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" href="/css/test.css">
+    <script src="/js/test.js"></script>
 </head>
 <body>
-<!-- navbar -->
-<div>navbar</div>
 
-<!-- content -->
-
-<!-- footer -->
 </body>
 </html>

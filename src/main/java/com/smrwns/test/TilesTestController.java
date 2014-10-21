@@ -9,7 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/tiles")
 public class TilesTestController {
 
-    @RequestMapping(value = "/test", method=RequestMethod.GET)
+    
+    @RequestMapping(value = "/navibar", method=RequestMethod.GET)
+    public String navibar() {
+        return "navibar";
+    }
+    
+    @RequestMapping(value = "/city", method=RequestMethod.GET)
     public String city() {
         return "city";
     }

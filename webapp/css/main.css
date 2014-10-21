@@ -1,1 +1,14 @@
 @CHARSET "UTF-8";
+
+/* position */
+.navi-position { margin-left: auto; margin-right: auto; width: 70%; }
+
+
+/* common */
+.navibar    { width : 100%; background-color : #b0e0e6; }
+.navibar tr { width : 100%; text-align : center; }
+.navibar td { width : 20%; text-align : center; }
+.navi-btn   { text-align : center; background-color : #1be033; }
+
+
+/* home */
