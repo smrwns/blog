@@ -11,17 +11,28 @@
 </head>
 
 <body>
-<div class="navi-position">
-    <tiles:insertAttribute name="navibar" defaultValue="navibar"/>
+<div class="header">
+    <div class="menu-top">menu-top</div>
+    <div class="menu-bar"><tiles:insertAttribute name="navibar" defaultValue="navibar"/></div>
 </div>
-<div class="#">
-    <div class="best-contents"></div><!-- sliding : city/village/home(cooking) -->
-    <div class="member"></div><!-- tab : memberInfo/shortCut/link/cashInfo -->
+<div class="body">
+    <div class="wrap">
+        <tiles:insertAttribute name="content-best" defaultValue="content-best"/>
+        <div class="box-user-main"><div class="item-user-main">user</div></div><!-- tab : memberInfo/shortCut/link/cashInfo -->
+    </div>
+    <div class="wrap">
+        <div class="box-basic"><div class="content-basic">best-kitchen</div></div>
+        <div class="box-basic"><div class="content-basic">best-home</div></div>
+        <div class="box-basic"><div class="content-basic">best-village</div></div>
+        <div class="box-basic"><div class="content-basic">best-city</div></div>
+        <div class="box-basic"><div class="content-basic">guerilla-event</div></div>
+        <div class="box-basic"><div class="content-basic">etc</div></div>
+    </div>
+<div class=footer>
 </div>
-<div class="#"></div>
-<div class="#"></div>
-<div class="#"></div>
-
+</div>
+<div class="footer">
+</div>
 </body>
 
 </html>
