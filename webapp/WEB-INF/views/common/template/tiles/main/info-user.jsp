@@ -6,14 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-    <table class="navibar">
-        <tr>
-            <td><span class="navi-btn">Main</span></td>
-            <td><span class="navi-btn">City</span></td>
-            <td><span class="navi-btn">Village</span></td>
-            <td><span class="navi-btn">Home</span></td>
-            <td><span class="navi-btn">Lank</span></td>
-        </tr>
-    </table>
+    <!-- tab : memberInfo/shortCut/link/cashInfo -->
+    <div class="info-user">info-user</div>
 </body>
 </html>

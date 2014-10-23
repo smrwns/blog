@@ -11,6 +11,7 @@
         <put-attribute name="head-js" value="/WEB-INF/views/common/template/tiles/head/js.jsp" />
         <put-attribute name="navibar" value="/WEB-INF/views/common/template/tiles/navibar.jsp" />
         <put-attribute name="content-best" value="/WEB-INF/views/common/template/tiles/main/content-best.jsp" />
+        <put-attribute name="info-user" value="/WEB-INF/views/common/template/tiles/main/info-user.jsp" />
     </definition>
 
     <!-- home -->

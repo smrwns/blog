@@ -18,7 +18,7 @@
 <div class="body">
     <div class="wrap">
         <tiles:insertAttribute name="content-best" defaultValue="content-best"/>
-        <div class="box-user-main"><div class="item-user-main">user</div></div><!-- tab : memberInfo/shortCut/link/cashInfo -->
+        <tiles:insertAttribute name="info-user" defaultValue="info-user"/>
     </div>
     <div class="wrap">
         <div class="box-basic"><div class="content-basic">best-kitchen</div></div>
@@ -28,8 +28,6 @@
         <div class="box-basic"><div class="content-basic">guerilla-event</div></div>
         <div class="box-basic"><div class="content-basic">etc</div></div>
     </div>
-<div class=footer>
-</div>
 </div>
 <div class="footer">
 </div>
